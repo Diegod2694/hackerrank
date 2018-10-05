@@ -1,26 +1,22 @@
 function diagonalDifference(arr) {
   const numberOfIterations = arr[0] * arr[0]
+  const numberOfColumns = arr[0]
   console.log(numberOfIterations)
-  console.log(arr)
+  const newArr = arr.slice(1)
+  console.log('newArr', newArr)
   let matrix = []
-  for (let i = 1; i < numberOfIterations; i++) {
-    matrix[i] = arr[i]
-    console.log(matrix[i])
-    for (let j = 1; j < numberOfIterations; j++) {
-      console.log(arr[j])
-      matrix[i][j] = arr[j]
-      console.log(matrix[i][j])
+  let row = []
+  accRow = 0
+  for (let i = 0; i < array.length; i++) {
+    row[i] = []
+    for (let j = accRow; j < array.length; j++) {
+      row[i].push(arr[j])
     }
+    accRow = accRow + numberOfColumns
+    matrix.push(row[i])
+    console.log('row[i]', row[i])
   }
-  let first = []
-  for (let i = 1; i < numberOfIterations; i++) {
-    for (let j = 1; j < numberOfIterations; j++) {
-      if (i === j) {
-        first.push(arr[i][j])
-      }
-    }
-  }
-  return first
+
 }
 
 const array = [ 3, 11, 2, 4, 4, 5, 6, 10, 8, -12 ]
